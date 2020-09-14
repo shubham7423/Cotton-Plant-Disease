@@ -56,7 +56,7 @@ train_images, train_labels = shuffle(train_images, train_labels)
 val_images, val_labels = shuffle(val_images, val_labels)
 
 # model
-base_model = InceptionResnetV2(weights=None, include_top=False, input_shape=(229, 229, 3))
+base_model = InceptionResnetV2(weights=None, include_top=False, input_shape=(224, 224, 3))
 x = Flatten()(base_model.output)
 predictions = Dense(4, activation='softmax')(x)
 for layer in base_model.layers:
